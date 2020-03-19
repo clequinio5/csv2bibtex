@@ -1,0 +1,9 @@
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\bin\Release\BibConverter.exe
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\bin\Release\BibConverter.pdb
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\bin\Release\BibConverter.xml
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.Main.resources
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.Resources.resources
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.vbproj.GenerateResource.Cache
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.exe
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.xml
+c:\users\kiki\documents\visual studio 2010\Projects\BibConverter\BibConverter\obj\x86\Release\BibConverter.pdb
