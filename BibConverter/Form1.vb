@@ -213,8 +213,8 @@ Public Class Main
                         If field <> "type" And field <> "id" Then
                             tab.Add(field & " = {" & spl(fields(field)) & "}")
                         End If
-                        bib = bib & String.Join("," & vbCrLf, tab.ToArray())
                     Next
+                    bib = bib & String.Join("," & vbCrLf, tab.ToArray())
                     bib = bib & vbCrLf & "}"
                     bibs.Add(bib)
                 Catch ex As Exception
