@@ -137,6 +137,7 @@ Public Class Main
             AddHandler newComboBox.DropDownClosed, New EventHandler(AddressOf Me.DropDownClosed)
             AddHandler newComboBox.MouseLeave, New EventHandler(AddressOf Me.DropDownLeave)
             AddHandler newComboBox.DrawItem, New DrawItemEventHandler(AddressOf Me.DrawItem)
+            AddHandler newComboBox.Leave, New EventHandler(AddressOf Me.DropDownFocusLeave)
 
             For Each key As String In BIB_FIELDS.Keys
                 newComboBox.Items.Add(key)
@@ -177,6 +178,21 @@ Public Class Main
 
     Private Sub DropDownLeave(ByVal sender As Object, ByVal e As EventArgs)
         ToolTip1.Hide(sender)
+    End Sub
+
+    Private Sub DropDownFocusLeave(ByVal sender As Object, ByVal e As EventArgs)
+        Dim fields As New List(Of String)
+        For i As Integer = 0 To FlowLayoutPanel1.Controls.Count - 1
+            Dim flcontrol As Control = FlowLayoutPanel1.Controls(i)
+            Dim panl As FlowLayoutPanel = flcontrol
+            For Each ctr As Control In panl.Controls
+                If TypeOf ctr Is ComboBox Then
+                    Dim combo As ComboBox = ctr
+                    fields.Add(combo.Text)
+                End If
+            Next
+        Next
+        RichTextBox1.Lines = fields.ToArray()
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
@@ -235,6 +251,19 @@ Public Class Main
 
     End Sub
 
-
-    
+    Private Sub RichTextBox1_Leave(sender As System.Object, e As System.EventArgs) Handles RichTextBox1.Leave
+        Dim fields As String() = RichTextBox1.Lines
+        For i As Integer = 0 To FlowLayoutPanel1.Controls.Count - 1
+            If i > fields.Length - 1 Then
+                Exit Sub
+            End If
+            Dim flcontrol As FlowLayoutPanel = FlowLayoutPanel1.Controls(i)
+            For Each ctr As Control In flcontrol.Controls
+                If TypeOf ctr Is ComboBox Then
+                    Dim combo As ComboBox = ctr
+                    combo.Text = fields(i)
+                End If
+            Next
+        Next
+    End Sub
 End Class
